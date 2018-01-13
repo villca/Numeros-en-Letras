@@ -41,7 +41,7 @@ Mediante comando:
 ```json
 {
     "require": {
-        "villca/numeros-en-letras": "^1.0"
+        "villca/numeros-en-letras": "^1.2"
     }
 }
 ```
