@@ -53,7 +53,7 @@ Agregar a Controlador `use NumerosEnLetras;`
 
 Agregar a la Ruta en "routes/web.php"
 
-    $ Route::resource('/villca', 'HomeController');
+    $ Route::get('/villca', 'HomeController');
     
 Crear el controlador "HomeController.php"
 
