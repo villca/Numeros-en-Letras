@@ -1,6 +1,5 @@
 <p align="center"><img src="https://avatars3.githubusercontent.com/u/34888056">Numeros En Letras</p>
 <p align="center">
-<a href="https://travis-ci.org/villca/numeros-en-letras"><img src="https://travis-ci.org/villca/numeros-en-letras.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/villca/numeros-en-letras"><img src="https://poser.pugx.org/villca/numeros-en-letras/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/villca/numeros-en-letras"><img src="https://poser.pugx.org/villca/numeros-en-letras/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/villca/numeros-en-letras"><img src="https://poser.pugx.org/villca/numeros-en-letras/license.svg" alt="License"></a>
