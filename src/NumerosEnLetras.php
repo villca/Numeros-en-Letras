@@ -69,6 +69,8 @@ class NumerosEnLetras
         if(count($div_decimales) > 1){
             $base_number = $div_decimales[0];
             $decNumberStr = (string) $div_decimales[1];
+            if(strlen($decNumberStr)==1)
+                $decNumberStr = $decNumberStr.'0' ;
             if(strlen($decNumberStr) == 2){
                 $decNumberStrFill = str_pad($decNumberStr, 9, '0', STR_PAD_LEFT);
                 $decCientos = substr($decNumberStrFill, 6);
