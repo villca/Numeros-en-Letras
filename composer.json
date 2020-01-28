@@ -1,13 +1,8 @@
 {
-  "name": "iraldoad/numeros-en-letras",
+  "name": "villca/numeros-en-letras",
   "description": "Convierte cualquier número en letras con el valor correspondiente.",
   "license" : "MIT",
   "authors" : [
-    {
-      "name": "Iraldo",
-      "email": "iraldoarevalo@gmail.com",
-      "homepage": "https://www.linkedin.com/in/iraldoad/"
-    },
     {
       "name": "Jesus Villca",
       "email": "24villca@gmail.com",
