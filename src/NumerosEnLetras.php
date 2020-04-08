@@ -2,11 +2,12 @@
 
 /***
  * @DevelopedBy Villca
+ * @ModifiedBy iraldoad
  ***/
 
 class NumerosEnLetras
 {
-    private static $UNIDADES = [
+    private static $UNIDADES = array(
         '',
         'un ',
         'dos ',
@@ -28,9 +29,9 @@ class NumerosEnLetras
         'dieciocho ',
         'diecinueve ',
         'veinte '
-    ];
+    );
 
-    private static $DECENAS = [
+    private static $DECENAS = array(
         'venti',
         'treinta ',
         'cuarenta ',
@@ -40,9 +41,9 @@ class NumerosEnLetras
         'ochenta ',
         'noventa ',
         'cien '
-    ];
+    );
 
-    private static $CENTENAS = [
+    private static $CENTENAS = array(
         'ciento ',
         'doscientos ',
         'trescientos ',
@@ -52,7 +53,7 @@ class NumerosEnLetras
         'setecientos ',
         'ochocientos ',
         'novecientos '
-    ];
+    );
 
     public static function convertir($number, $currency = '', $format = false, $decimals = '')
     {
@@ -64,19 +65,19 @@ class NumerosEnLetras
             return 'No es posible convertir el numero en letras';
         }
 
-        $div_decimales = explode('.',$base_number);
+        $div_decimales = explode('.', $base_number);
 
-        if(count($div_decimales) > 1){
+        if (count($div_decimales) > 1) {
             $base_number = $div_decimales[0];
-            $decNumberStr = (string) $div_decimales[1];
-            if(strlen($decNumberStr) == 2){
+            $decNumberStr = (string)$div_decimales[1];
+            if (strlen($decNumberStr) == 2) {
                 $decNumberStrFill = str_pad($decNumberStr, 9, '0', STR_PAD_LEFT);
                 $decCientos = substr($decNumberStrFill, 6);
                 $decimales = self::convertGroup($decCientos);
             }
         }
 
-        $numberStr = (string) $base_number;
+        $numberStr = (string)$base_number;
         $numberStrFill = str_pad($numberStr, 9, '0', STR_PAD_LEFT);
         $millones = substr($numberStrFill, 0, 3);
         $miles = substr($numberStrFill, 3, 3);
@@ -106,17 +107,17 @@ class NumerosEnLetras
             }
         }
 
-        if($format){
-            if(empty($decimales)){
-                $valor_convertido = number_format($number, 2, ',', '.') . ' (' . ucfirst($converted) . '00/100 '.$currency.')';
+        if ($format) {
+            if (empty($decimales)) {
+                $valor_convertido = number_format($number, 2, ',', '.') . ' (' . ucfirst($converted) . '00/100 ' . $currency . ')';
             } else {
-                $valor_convertido = number_format($number, 2, ',', '.') . ' (' . ucfirst($converted) . $decNumberStr . '/100 '.$currency.')';
+                $valor_convertido = number_format($number, 2, ',', '.') . ' (' . ucfirst($converted) . $decNumberStr . '/100 ' . $currency . ')';
             }
-        }else{
-            if(empty($decimales)){
+        } else {
+            if (empty($decimales)) {
                 $valor_convertido = ucfirst($converted) . $currency;
             } else {
-                $valor_convertido = ucfirst($converted) . $currency. ' con ' . $decimales . $decimals;
+                $valor_convertido = ucfirst($converted) . $currency . ' con ' . $decimales . $decimals;
             }
         }
 
@@ -133,12 +134,12 @@ class NumerosEnLetras
             $output = self::$CENTENAS[$n[0] - 1];
         }
 
-        $k = intval(substr($n,1));
+        $k = intval(substr($n, 1));
 
         if ($k <= 20) {
             $output .= self::$UNIDADES[$k];
         } else {
-            if(($k > 30) && ($n[2] !== '0')) {
+            if (($k > 30) && ($n[2] !== '0')) {
                 $output .= sprintf('%sy %s', self::$DECENAS[intval($n[1]) - 2], self::$UNIDADES[intval($n[2])]);
             } else {
                 $output .= sprintf('%s%s', self::$DECENAS[intval($n[1]) - 2], self::$UNIDADES[intval($n[2])]);
